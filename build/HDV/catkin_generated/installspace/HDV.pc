@@ -1,0 +1,8 @@
+prefix=/home/zhaorui/HDV-reprod/install
+
+Name: HDV
+Description: Description of HDV
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

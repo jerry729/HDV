@@ -1,0 +1,110 @@
+<launch>
+    <node name="usb_cam1" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera1" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="usb_cam2" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video2" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera2" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="image_view1" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam1/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+
+    <node name="image_view2" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam2/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+
+    <!-- <node name="usb_cam3" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera3" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="usb_cam4" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video10" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera4" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="usb_cam5" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video2" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera5" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="usb_cam6" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video4" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format " value="yuyv" />
+        <param name="framerate" value="30" />
+        <param name="brightness" value="24" />
+        <param name="contrast" value="128" />
+        <param name="saturation " value="70" />
+        <param name="camera_name" value="usb_camera6" />
+        <param name="camera_info_url" value="" />
+    </node>
+
+    <node name="image_view3" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam3/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+
+    <node name="image_view4" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam4/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+
+    <node name="image_view5" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam5/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+
+    <node name="image_view6" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/usb_cam6/image_raw"/>
+        <param name="autosize" value="true" />
+    </node> -->
+
+</launch>

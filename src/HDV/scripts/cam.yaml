@@ -1,0 +1,37 @@
+ImageSize: [ 640, 480 ]
+MaxDistance: 4
+#Tolerance: 0.0166919     #(33.3331+0.0507)/2/1000
+Tolerance: 1
+Lidars:
+   Lidar1: '/velodyne_points'
+
+Cameras:
+   Camera1:
+      Topics:
+         sub_image: '/usb_cam1/image_raw'
+         node: 'fusion1'
+      CameraInfo:
+         camera_mat: [ [488.951688, 0., 340.278428],
+                       [0., 488.196830, 229.958649],
+                       [0., 0., 1. ] ]
+         distortion: [ -0.006141, 0.028335, -0.001433, -0.002261, 0. ]
+      Lidar1:
+         sub_pointscloud: 'phase11'
+         TOI: 80000000
+         ROI: [0, 90]
+         rotation: [ -90., 0.00031, 179.98814 ]
+         translation: [ 0.00215, -0.120332, -0.049821 ]
+
+   Camera2:
+      Topics:
+         sub_image: '/usb_cam2/image_raw'
+         node: 'fusion2'
+      CameraInfo:
+         camera_mat: [ 488.951688, 0., 340.278428, 0., 488.196830, 229.958649, 0., 0., 1. ]
+         distortion: [ -0.006141, 0.028335, -0.001433, -0.002261, 0. ]
+      Lidar1:
+         sub_pointscloud: 'phase21'
+         TOI: 80000000
+         ROI: [-90, 0]
+         rotation: [ -90., 0.00031, 179.98814 ]
+         translation: [ 0.00215, -0.120332, -0.049821 ]

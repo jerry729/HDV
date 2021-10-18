@@ -1,0 +1,2 @@
+HDV
+-DCATKIN_DEVEL_PREFIX=/home/zhaorui/HDV-reprod/devel -DCMAKE_INSTALL_PREFIX=/home/zhaorui/HDV-reprod/install -G Unix Makefiles
